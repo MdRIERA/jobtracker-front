@@ -48,6 +48,14 @@ function Login() {
         <h1>Bienvenido</h1>
         <p className="form-subtitle">Accede a tu cuenta para continuar</p>
 
+        <button
+          type="button"
+          className="demo-button"
+          onClick={() => setFormData({ email: 'martin@martin.com', password: '12345' })}
+        >
+          Usar credenciales de demo
+        </button>
+
         <form onSubmit={handleSubmit}>
           <input
             type="email"

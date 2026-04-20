@@ -315,6 +315,27 @@ form {
   text-align: center;
 }
 
+.demo-button {
+  width: 100%;
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: 1px dashed var(--color-border-strong);
+  font-size: 0.82rem;
+  padding: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
+.demo-button:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-secondary);
+  background-color: var(--color-bg);
+  box-shadow: none;
+  transform: none;
+}
+
 .form-card form button[type="submit"],
 .form-card form > button:last-child {
   width: 100%;
