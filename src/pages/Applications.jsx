@@ -104,40 +104,39 @@ function Applications() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <h1>Applications</h1>
+        <h1>Aplicaciones</h1>
       </div>
 
       <form onSubmit={handleFilterSubmit} className="filters-box">
-        <select
-          value={statusInput}
-          onChange={(event) => setStatusInput(event.target.value)}
-        >
-          <option value="">Todos los estados</option>
-          <option value="guardada">Guardada</option>
-          <option value="aplicada">Aplicada</option>
-          <option value="entrevista">Entrevista</option>
-          <option value="rechazada">Rechazada</option>
-          <option value="oferta">Oferta</option>
-        </select>
-
-        <input
-          type="text"
-          placeholder="Buscar por empresa"
-          value={companyInput}
-          onChange={(event) => setCompanyInput(event.target.value)}
-        />
-
-        <input
-          type="text"
-          placeholder="Buscar por puesto"
-          value={positionInput}
-          onChange={(event) => setPositionInput(event.target.value)}
-        />
-
+        <div className="filters-row">
+          <select
+            value={statusInput}
+            onChange={(event) => setStatusInput(event.target.value)}
+          >
+            <option value="">Todos los estados</option>
+            <option value="guardada">Guardada</option>
+            <option value="aplicada">Aplicada</option>
+            <option value="entrevista">Entrevista</option>
+            <option value="rechazada">Rechazada</option>
+            <option value="oferta">Oferta</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Empresa"
+            value={companyInput}
+            onChange={(event) => setCompanyInput(event.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Puesto"
+            value={positionInput}
+            onChange={(event) => setPositionInput(event.target.value)}
+          />
+        </div>
         <div className="filter-actions">
-          <button type="submit">Filtrar</button>
-          <button type="button" onClick={handleClearFilters}>
-            Limpiar filtros
+          <button type="submit">Buscar</button>
+          <button type="button" className="secondary-button" onClick={handleClearFilters}>
+            Limpiar
           </button>
         </div>
       </form>
@@ -145,10 +144,10 @@ function Applications() {
       {successMessage && <p className="message success-message">{successMessage}</p>}
       {error && <p className="message error-message">{error}</p>}
 
-      {loading && <p>Cargando applications...</p>}
+      {loading && <p className="loading-state">Cargando aplicaciones...</p>}
 
       {!loading && applications.length === 0 && (
-        <p>No hay candidaturas para esos filtros.</p>
+        <p className="empty-state">No hay candidaturas para esos filtros.</p>
       )}
 
       <div className="cards-grid">

@@ -54,7 +54,7 @@ function JobFormPage() {
   return (
     <div className="form-page">
       <div className="form-card">
-        <h1>{isEditing ? 'Editar job' : 'Crear job'}</h1>
+        <h1>{isEditing ? 'Editar empleo' : 'Publicar empleo'}</h1>
 
         {error && <p className="message error-message">{error}</p>}
 

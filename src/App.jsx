@@ -64,15 +64,6 @@ function App() {
         />
 
         <Route
-          path="/applications/new"
-          element={
-            <ProtectedRoute>
-              <ApplicationFormPage />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
           path="/applications/edit/:id"
           element={
             <ProtectedRoute>

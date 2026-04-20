@@ -45,7 +45,8 @@ function Login() {
   return (
     <div className="auth-page">
       <div className="form-card">
-        <h1>Login</h1>
+        <h1>Bienvenido</h1>
+        <p className="form-subtitle">Accede a tu cuenta para continuar</p>
 
         <form onSubmit={handleSubmit}>
           <input

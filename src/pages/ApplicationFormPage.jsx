@@ -70,7 +70,7 @@ function ApplicationFormPage() {
   return (
     <div className="form-page">
       <div className="form-card">
-        <h1>{isEditing ? 'Editar application' : 'Crear application'}</h1>
+        <h1>{isEditing ? 'Editar candidatura' : 'Nueva candidatura'}</h1>
 
         {error && <p className="message error-message">{error}</p>}
 

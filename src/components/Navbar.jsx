@@ -14,19 +14,26 @@ function Navbar() {
     navigate('/')
   }
 
+  const user = JSON.parse(localStorage.getItem('user'))
+  const isAdmin = user?.isAdmin
+  const isActive = (path) => location.pathname === path ? 'nav-link active' : 'nav-link'
+
   return (
     <nav>
-      <h2>JobTracker</h2>
+      <Link to="/home" className="nav-brand">
+        <span className="nav-brand-dot" />
+        JobTracker
+      </Link>
 
       {!isAuthPage && token && (
-        <div>
-          <Link to="/home">Home</Link>
-          {' | '}
-          <Link to="/jobs">Jobs</Link>
-          {' | '}
-          <Link to="/applications">Applications</Link>
-          {' | '}
-          <button onClick={handleLogout}>Logout</button>
+        <div className="nav-links">
+          <Link to="/home" className={isActive('/home')}>Inicio</Link>
+          <Link to="/jobs" className={isActive('/jobs')}>Empleos</Link>
+          {!isAdmin && (
+            <Link to="/applications" className={isActive('/applications')}>Aplicaciones</Link>
+          )}
+          <div className="nav-divider" />
+          <button className="nav-logout" onClick={handleLogout}>Salir</button>
         </div>
       )}
     </nav>

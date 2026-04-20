@@ -41,7 +41,8 @@ function Register() {
   return (
     <div className="auth-page">
       <div className="form-card">
-        <h1>Registro</h1>
+        <h1>Crear cuenta</h1>
+        <p className="form-subtitle">Empieza a gestionar tus candidaturas hoy</p>
 
         <form onSubmit={handleSubmit}>
           <input

@@ -111,7 +111,7 @@ function Jobs() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <h1>Jobs</h1>
+        <h1>Empleos</h1>
 
         {isAdmin && (
           <Link to="/jobs/new">
@@ -121,24 +121,24 @@ function Jobs() {
       </div>
 
       <form onSubmit={handleFilterSubmit} className="filters-box">
-        <input
-          type="text"
-          placeholder="Buscar por empresa"
-          value={companyInput}
-          onChange={(event) => setCompanyInput(event.target.value)}
-        />
-
-        <input
-          type="text"
-          placeholder="Buscar por puesto"
-          value={titleInput}
-          onChange={(event) => setTitleInput(event.target.value)}
-        />
-
+        <div className="filters-row">
+          <input
+            type="text"
+            placeholder="Empresa"
+            value={companyInput}
+            onChange={(event) => setCompanyInput(event.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Puesto"
+            value={titleInput}
+            onChange={(event) => setTitleInput(event.target.value)}
+          />
+        </div>
         <div className="filter-actions">
-          <button type="submit">Filtrar</button>
-          <button type="button" onClick={handleClearFilters}>
-            Limpiar filtros
+          <button type="submit">Buscar</button>
+          <button type="button" className="secondary-button" onClick={handleClearFilters}>
+            Limpiar
           </button>
         </div>
       </form>
@@ -146,10 +146,10 @@ function Jobs() {
       {successMessage && <p className="message success-message">{successMessage}</p>}
       {error && <p className="message error-message">{error}</p>}
 
-      {loading && <p>Cargando jobs...</p>}
+      {loading && <p className="loading-state">Cargando empleos...</p>}
 
       {!loading && jobs.length === 0 && !error && (
-        <p>No hay ofertas para esos filtros.</p>
+        <p className="empty-state">No hay ofertas para esos filtros.</p>
       )}
 
       {!loading && jobs.length > 0 && (
