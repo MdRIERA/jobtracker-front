@@ -46,7 +46,7 @@ URL de la aplicación
 
 ## Frontend desplegado en Netlify:
 
-https://buscadorempleo.netlify.app/home
+https://buscadorempleo.netlify.app/
 
 ## Credenciales de prueba
 
